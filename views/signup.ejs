@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Repoman Sign-up</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-3">
+            <h2>Repoman - Sign up</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-3 well">
+            <% if (error) { %>
+            <div class="alert alert-warning"><%= error %></div>
+            <% } %>
+            <form method="POST" action="/prod/signup">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<%= email %>">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="<%= password %>">
+                </div>
+                <div class="form-group">
+                    <label for="repassword">Re-enter Password</label>
+                    <input type="password" class="form-control" id="repassword" name="repassword" placeholder="Re-enter Password" value="<%= repassword %>">
+                </div>
+                <div class="form-group">
+                    <label for="githubToken">Personal Github Access Token (<a href='https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/' target="_blank">How to create</a>)</label>
+                    <input type="githubToken" class="form-control" id="githubToken" name="githubToken" placeholder="Github Token" value="<%= githubToken %>">
+                </div>
+                <div class="form-group">
+                    <label for="githubUsername">Github username (Used for 'owner' property)</label>
+                    <input type="githubUsername" class="form-control" id="githubUsername" name="githubUsername" placeholder="Github Username" value="<%= githubUsername %>">
+                </div>
+                <button type="submit" class="btn btn-default" id="btnSubmit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-3"style="font-size: 12px; text-align: center">Developer of app is not responsible for anything that happens with your github repos, branches, and/or code while using this app via Alexa
+    or other means.  Dev-build use at your own risk</div>
+    </div>
+</div>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</body>
+</html>
